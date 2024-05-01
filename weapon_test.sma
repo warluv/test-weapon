@@ -256,3 +256,21 @@ AddWeapon(reference[MAX_REFERENCE_LENGTH], name[MAX_NAME_LENGTH], bool:malee = f
 
     return ArrayPushArray(g_aWeapons, data);
 }
+
+public plugin_natives()
+{
+    register_native("open_weapon_menu", "@native_open_weapon_menu");
+}
+
+@native_open_weapon_menu(plugin, argc)
+{
+    enum { arg_player = 1 };
+
+    new player = get_param(arg_player);
+
+    if (!is_user_connected(player))
+        return false;
+
+    WeaponMenu_Show(id);
+    return true;
+}
