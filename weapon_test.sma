@@ -163,6 +163,7 @@ WeaponMenu_Show(id, page = 0)
 
         if (g_iMenuPage[id])
         {
+            // BB_BACK - это что?
             len += formatex(text[len], charsmax(text) - len, "^n\r9. \wНазад", "BB_BACK");
             keys |= MENU_KEY_9;
         }
@@ -226,6 +227,7 @@ WeaponMenu_Show(id, page = 0)
 
 AddWeapons()
 {
+    // Для чего?
     AddWeapon("", "");
     AddWeapon("weapon_m4a1", "M4A1", _, "models/custom_test/v_m4a1.mdl", "models/custom_test/p_m4a1.mdl", "models/custom_test/w_m4a1.mdl");
     AddWeapon("weapon_ak47", "AK47", _, "models/custom_test/v_ak47.mdl", "models/custom_test/p_ak47.mdl", "models/custom_test/w_ak47.mdl");
@@ -245,6 +247,8 @@ AddWeapon(reference[MAX_REFERENCE_LENGTH], name[MAX_NAME_LENGTH], bool:malee = f
     data[Weapon_WorldModel] = worldModel;
     data[Weapon_CustomId] = ArraySize(g_aWeapons);
 
+
+    // Добавить проверку на существование моделей
     if (data[Weapon_ViewModel][0])
         precache_model(data[Weapon_ViewModel]);
 
