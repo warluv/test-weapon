@@ -163,11 +163,11 @@ WeaponMenu_Show(id, page = 0)
 
         if (g_iMenuPage[id])
         {
-            len += formatex(text[len], charsmax(text) - len, "^n\r9. \wНазад", "BB_BACK");
+            len += formatex(text[len], charsmax(text) - len, "^n\r9. \wНазад");
             keys |= MENU_KEY_9;
         }
         else
-            len += formatex(text[len], charsmax(text) - len, "^n\r9. \dНазад", "BB_BACK");
+            len += formatex(text[len], charsmax(text) - len, "^n\r9. \dНазад");
     }
 
     len += formatex(text[len], charsmax(text) - len, "^n\r0. \wВыход");
