@@ -247,12 +247,18 @@ AddWeapon(reference[MAX_REFERENCE_LENGTH], name[MAX_NAME_LENGTH], bool:malee = f
 
     if (data[Weapon_ViewModel][0])
         precache_model(data[Weapon_ViewModel]);
+    else
+        server_print("Нет модели: %s", data[Weapon_ViewModel])
 
     if (data[Weapon_PlayerModel][0])
         precache_model(data[Weapon_PlayerModel]);
+    else
+        server_print("Нет модели: %s", data[Weapon_PlayerModel])
 
     if (data[Weapon_WorldModel][0])
         precache_model(data[Weapon_WorldModel]);
+    else
+        server_print("Нет модели: %s", data[Weapon_WorldModel])
 
     return ArrayPushArray(g_aWeapons, data);
 }
